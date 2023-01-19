@@ -42,6 +42,8 @@ MqttClient::MqttClient(MqttBroker* local_broker, TcpClient* new_client)
   tcp_client->onData(onData, this);
   // client->onConnect() TODO
   // client->onDisconnect() TODO
+#elif defined(TINY_MQTT_ETH)
+  tcp_client = new EthernetClient(*new_client);
 #else
   tcp_client = new WiFiClient(*new_client);
 #endif
@@ -170,7 +172,11 @@ void MqttBroker::onClient(void* broker_ptr, TcpClient* client)
 void MqttBroker::loop()
 {
 #ifndef TINY_MQTT_ASYNC
-  WiFiClient client = server->available();
+  #ifdef TINY_MQTT_ETH
+    EthernetClient client = server->available();
+  #else
+    WiFiClient client = server->available();
+  #endif
 
   if (client)
   {
