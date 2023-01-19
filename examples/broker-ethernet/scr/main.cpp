@@ -3,12 +3,13 @@
 #include <SPI.h>
 #include <Ethernet.h>
 
+// next two defines MUST be before including TinyMqtt.h !!!
 #define TINY_MQTT_ETH
 #define TINY_MQTT_DEBUG 1
 // #define TINY_MQTT_ASYNC
 
 #include <TinyConsole.h>
-#include "TinyMqtt.h"
+#include <TinyMqtt.h>
 
 #define PORT 1883
 MqttBroker broker(PORT);
