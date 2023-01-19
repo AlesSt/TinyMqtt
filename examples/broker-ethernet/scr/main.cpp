@@ -3,6 +3,7 @@
 #include <SPI.h>
 #include <Ethernet.h>
 
+#define TINY_MQTT_ETH
 #define TINY_MQTT_DEBUG 1
 // #define TINY_MQTT_ASYNC
 
