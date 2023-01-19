@@ -48,7 +48,7 @@ TinyMqtt is a small, fast and capable Mqtt Broker and Client for Esp8266 / Esp32
 | [simple-client](https://github.com/hsaturn/TinyMqtt/tree/main/examples/simple-client/simple-client.ino)       | Connect the ESP to an external Mqtt broker |
 | [simple-broker](https://github.com/hsaturn/TinyMqtt/tree/main/examples/simple-broker/simple-broker.ino)       | Simple Mqtt broker with your ESP           |
 | [tinymqtt-test](https://github.com/hsaturn/TinyMqtt/tree/main/examples/tinymqtt-test/tinymqtt-test.ino)       | Complex console example                    |
-| [broker-ethernet](https://github.com/hsaturn/TinyMqtt/tree/main/examples/broker-ethernet/broker-ethernet.ino)       | Broker with Ethernet.h on PIO              |
+| [broker-ethernet](https://github.com/hsaturn/TinyMqtt/tree/main/examples/broker-ethernet/src/main.cpp)       | Broker with Ethernet.h on PIO              |
 
 - tinymqtt-test : This is a complex sketch with a terminal console
   that allows to add clients publish, connect etc with interpreted commands.
