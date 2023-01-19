@@ -15,7 +15,11 @@
     #include <ESP8266WiFi.h>
   #endif
 #elif defined(ESP32)
-  #include <WiFi.h>
+  #ifdef TINY_MQTT_ETH
+    #include <Ethernet.h>
+  #else
+    #include <WiFi.h>
+  #endif
   #ifdef TINY_MQTT_ASYNC
     #include <AsyncTCP.h> // https://github.com/me-no-dev/AsyncTCP
   #endif
@@ -56,6 +60,9 @@
 #ifdef TINY_MQTT_ASYNC
   using TcpClient = AsyncClient;
   using TcpServer = AsyncServer;
+#elif defined(TINY_MQTT_ETH)
+  using TcpClient = EthernetClient;
+  using TcpServer = EthernetServer;
 #else
   using TcpClient = WiFiClient;
   using TcpServer = WiFiServer;
